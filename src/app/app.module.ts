@@ -8,7 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AddExpenseComponent } from './components/add-expense/add-expense.component';
 import { ExpensesListComponent } from './components/expenses-list/expenses-list.component';
 import { ExpenseItemComponent } from './components/expenses-list/expense-item/expense-item.component';
-
+import { AlertModule } from 'ngx-bootstrap'
 
 
 @NgModule({
@@ -18,13 +18,16 @@ import { ExpenseItemComponent } from './components/expenses-list/expense-item/ex
     FooterComponent,
     AddExpenseComponent,
     ExpensesListComponent,
-    ExpenseItemComponent
+    ExpenseItemComponent,
+
     
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AlertModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
