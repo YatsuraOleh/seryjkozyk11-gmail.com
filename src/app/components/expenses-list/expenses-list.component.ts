@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./expenses-list.component.css']
 })
 export class ExpensesListComponent implements OnInit {
+  items: any = ['Item 1', 'Item 2', 'Item 3', 'Item 4'];
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
   }
