@@ -1,7 +1,6 @@
-<ul>
-  <li *ngFor="let item of items">
-    <app-expense-item [item]="item"
-                      type="expense">
+<ul *ngIf="expenses">
+  <li *ngFor="let expense of expenses">
+    <app-expense-item [item]="expense">
     </app-expense-item>
   </li>
 </ul>

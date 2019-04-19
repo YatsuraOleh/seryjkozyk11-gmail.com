@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "expenses": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "expense": 5
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "expense": 10
+    },
+    {
+      "id": 3,
+      "expense": 14
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

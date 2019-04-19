@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Expense } from '../../../shared/interfaces';
 
 @Component({
   selector: 'app-expense-item',
@@ -6,8 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./expense-item.component.css']
 })
 export class ExpenseItemComponent implements OnInit {
-  @Input() item: any;
-  @Input() type: string;
+  @Input() item: Expense;
 
   constructor() { }
 
