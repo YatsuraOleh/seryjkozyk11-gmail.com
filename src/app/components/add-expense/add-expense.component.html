@@ -1,5 +1,13 @@
-<form>
-  <input type="text">
+<section class="container">
+<form class="new-expense" (ngSubmit)="onSubmit()">
+  <input class="form-control"
+         placeholder="expense name"
+         name="expense"
+         type="text"
+         [(ngModel)]= "expense"/>
 
-  <button type="submit">Add</button>
+  <button type="submit" class="btn btn-success">Add</button>
 </form>
+</section>
+
+
