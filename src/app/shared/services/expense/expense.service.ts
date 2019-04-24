@@ -17,5 +17,7 @@ export class ExpenseService {
     return this.http.get<Array<Expense>>(this.url);
   }
 
-  setExpense() {}
+  setExpense(expense) {
+      return this.http.post(this.url, expense);
+  }
 }

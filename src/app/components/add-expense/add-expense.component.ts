@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExpenseService } from 'src/app/shared/services';
 
 @Component({
   selector: 'app-add-expense',
@@ -6,21 +7,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-expense.component.css']
 })
 export class AddExpenseComponent implements OnInit {
-  public expense: any;
+  public expense: string;
 
-  constructor() { }
+  constructor(  private expenseService: ExpenseService) {}
+  
 
   ngOnInit() { }
 
-  public onSubmit(){
-    console.log(new NewExpense(this.expense));
-    // this.expense.push(new NewExpense(this.expense));
+  public onSubmit(){   
+    this.createId();
+  }
+
+  private createId() {
+    this.expenseService.getExpense().subscribe(data => {
+
+    const newExpense = new NewExpense(this.expense, (data[data.length - 1].id + 1));
+
+    this.expenseService.setExpense(newExpense);
+    })
   }
 }
 class NewExpense {
   constructor (
     public expense: string,
-    public done: boolean = false,
+    public id: number
+
   ){}
 }
 
