@@ -9,29 +9,28 @@ import { ExpenseService } from 'src/app/shared/services';
 export class AddExpenseComponent implements OnInit {
   public expense: string;
 
-  constructor(  private expenseService: ExpenseService) {}
-  
+  constructor(private expenseService: ExpenseService) { }
 
   ngOnInit() { }
 
-  public onSubmit(){   
+  public onSubmit() {
     this.createId();
   }
 
   private createId() {
     this.expenseService.getExpense().subscribe(data => {
 
-    const newExpense = new NewExpense(this.expense, (data[data.length - 1].id + 1));
+      const newExpense = new NewExpense(this.expense, (data[data.length - 1].id + 1));
 
-    this.expenseService.setExpense(newExpense);
-    })
+      this.expenseService.setExpense(newExpense);
+    });
   }
 }
+
 class NewExpense {
-  constructor (
+  constructor(
     public expense: string,
     public id: number
-
-  ){}
+  ) { }
 }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Expense } from '../../interfaces';
 
 @Injectable({
@@ -8,6 +8,7 @@ import { Expense } from '../../interfaces';
 })
 export class ExpenseService {
   url = 'http://localhost:3000/expenses';
+  subject = new Subject();
 
   constructor(
     private http: HttpClient
@@ -17,7 +18,11 @@ export class ExpenseService {
     return this.http.get<Array<Expense>>(this.url);
   }
 
-  setExpense(expense) {
-      return this.http.post(this.url, expense);
+  setExpense(expense): void {
+    this.http.post(this.url, expense).subscribe(
+      () => {
+        this.subject.next();
+      }
+    );
   }
 }
