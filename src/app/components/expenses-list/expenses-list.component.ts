@@ -36,12 +36,17 @@ export class ExpensesListComponent implements OnInit, OnDestroy {
 
   private getExpense() {
     this.expenseService.getExpense()
-    .pipe(takeUntil(this.ngUnsubscribe$))
-    .subscribe(
-      data => {
-        this.expenses = data;
-      }
-    );
+      .pipe(takeUntil(this.ngUnsubscribe$))
+      .subscribe(
+        data => {
+          this.expenses = data;
+        }
+      );
   }
-
+  public deleteExpense(item: Expense): void {
+    const index = this.expenses.indexOf(item);
+    if (index > -1) {
+      this.expenses.splice(index, 1);
+    }
+  }
 }
