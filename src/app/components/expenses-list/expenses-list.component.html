@@ -1,6 +1,16 @@
 <ul *ngIf="expenses">
   <li *ngFor="let expense of expenses">
-    <app-expense-item [item]="expense">
-    </app-expense-item>
+
+    <body class="expense-body">
+      <div class="d-flex">
+        <app-expense-item [item]="expense">
+        </app-expense-item>
+      </div>
+      <div class="expense-btn-group">
+          <i class="material-icons">
+              delete
+              </i>
+      </div>
+    </body>
   </li>
 </ul>
