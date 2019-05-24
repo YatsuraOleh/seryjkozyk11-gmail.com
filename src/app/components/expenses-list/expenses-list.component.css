@@ -5,7 +5,7 @@ body {
     padding: 0;
     letter-spacing: none;
 }
-
-i {
-    text-align: right;
+.expense-btn-group {
+      margin: 0 0 0 100%;
 }
+

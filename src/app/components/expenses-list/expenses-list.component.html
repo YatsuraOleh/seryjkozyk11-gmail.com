@@ -1,16 +1,17 @@
-<ul *ngIf="expenses">
-  <li *ngFor="let expense of expenses">
-
-    <body class="expense-body">
+<ul class="list-group list-group-flush expenses-list" *ngIf="expenses">
+  <li class="list-group-item list-group-item-primary expense-item" *ngFor="let expense of expenses">
+    <header class="expense-header">
       <div class="d-flex">
         <app-expense-item [item]="expense">
         </app-expense-item>
       </div>
       <div class="expense-btn-group">
+        <button class="btn btn-danger btn-sm">
           <i class="material-icons">
-              delete
-              </i>
+            delete
+          </i>
+        </button>
       </div>
-    </body>
+    </header>
   </li>
 </ul>
