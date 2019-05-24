@@ -3,8 +3,8 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding: 16px 24px;
-    margin: 0 24p;
-    border-top: 1px solid #c1c1c2;
+    margin: 0 24px;
+    border-top: 1px solid #c1c1c1;
 }
 
 footer ul {
@@ -16,5 +16,5 @@ footer ul {
 }
 
 footer li:not(:last-child) {
-    margin-right: 16px;
+    margin-right: 30px;
 }
