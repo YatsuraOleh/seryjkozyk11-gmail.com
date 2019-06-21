@@ -7,7 +7,8 @@ import { footerNew } from './footer-new.config';
   styleUrls: ['./footer-new.component.css']
 })
 export class FooterNewComponent implements OnInit {
-navItem = footerNew;
+  footerNewData = footerNew;
+
   constructor() { }
 
   ngOnInit() {
