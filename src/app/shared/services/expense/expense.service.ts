@@ -25,4 +25,12 @@ export class ExpenseService {
       }
     );
   }
+
+  delExpense(id) {
+    this.http.delete(`${this.url}/${id}`).subscribe(
+      () => {
+        this.subject.next();
+      }
+    );
+  }
 }

@@ -17,6 +17,7 @@ export class ExpensesListComponent implements OnInit, OnDestroy {
     private expenseService: ExpenseService
   ) { }
 
+
   ngOnInit() {
     this.getExpense();
 
@@ -43,10 +44,7 @@ export class ExpensesListComponent implements OnInit, OnDestroy {
         }
       );
   }
-  public deleteExpense(item: Expense): void {
-    const index = this.expenses.indexOf(item);
-    if (index > -1) {
-      this.expenses.splice(index, 1);
-    }
+  public deleteExpense(id): void {
+    this.expenseService.delExpense(id);
   }
 }

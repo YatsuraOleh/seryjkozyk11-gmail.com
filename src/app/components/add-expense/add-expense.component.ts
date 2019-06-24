@@ -18,9 +18,17 @@ export class AddExpenseComponent implements OnInit {
   }
 
   private createId() {
+
     this.expenseService.getExpense().subscribe(data => {
 
-      const newExpense = new NewExpense(this.expense, (data[data.length - 1].id + 1));
+      let id;
+      if (data.length) {
+        id = (data[data.length - 1].id) + 1;
+      } else {
+        id = 1;
+      }
+
+      const newExpense = new NewExpense(this.expense, id);
 
       this.expenseService.setExpense(newExpense);
     });
