@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NG_ASYNC_VALIDATORS } from '@angular/forms';
 
 @Component({
   selector: 'app-footer-nav',
@@ -8,10 +7,9 @@ import { NG_ASYNC_VALIDATORS } from '@angular/forms';
 })
 export class FooterNavComponent implements OnInit {
 @Input() navList: any;
+
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.navList);
-  }
+  ngOnInit() { }
 
 }

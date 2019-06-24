@@ -5,4 +5,4 @@ export const footerNew = [{
 }, {
     link: '',
     text: 'item 2'
-}]
+}];

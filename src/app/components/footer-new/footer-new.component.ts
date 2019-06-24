@@ -8,6 +8,7 @@ import { footerNew } from './footer-new.config';
 })
 export class FooterNewComponent implements OnInit {
   footerNewData = footerNew;
+
   constructor() { }
 
   ngOnInit() {
