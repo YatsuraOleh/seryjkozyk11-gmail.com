@@ -1,13 +1,4 @@
 <footer>
-<p class="copyright">&copy; 2019</p>
-
-<nav>
-  <ul>
-    <li *ngFor="let item of navItem">{{item.text}}</li>
- 
-  </ul>
-</nav>
-
-
-
+  <p class="copyright">&copy; 2019</p>
+  <app-footer-nav [navList]="footerNewData"></app-footer-nav>
 </footer>

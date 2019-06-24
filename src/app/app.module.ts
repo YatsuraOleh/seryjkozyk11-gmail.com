@@ -10,6 +10,7 @@ import { ExpensesListComponent } from './components/expenses-list/expenses-list.
 import { ExpenseItemComponent } from './components/expenses-list/expense-item/expense-item.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { FooterNewComponent } from './components/footer-new/footer-new.component';
+import { FooterNavComponent } from './components/footer-new/footer-nav/footer-nav.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FooterNewComponent } from './components/footer-new/footer-new.component
     AddExpenseComponent,
     ExpensesListComponent,
     ExpenseItemComponent,
-    FooterNewComponent
+    FooterNewComponent,
+    FooterNavComponent
   ],
   imports: [
     BrowserModule,
