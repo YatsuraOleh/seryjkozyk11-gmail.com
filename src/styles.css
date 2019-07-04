@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.app-modal footer{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 15px 20px;
+}
+.app-modal footer button:not(:last-child){
+margin-right: 10px;
+}

@@ -3,6 +3,7 @@ import { ExpenseService } from '../../shared/services';
 import { Expense } from '../../shared/interfaces';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-expenses-list',
@@ -13,8 +14,11 @@ export class ExpensesListComponent implements OnInit, OnDestroy {
   private ngUnsubscribe$ = new Subject();
   expenses: Array<Expense>;
 
+  private modalRef: BsModalRef;
+
   constructor(
-    private expenseService: ExpenseService
+    private expenseService: ExpenseService,
+    private modalService: BsModalService
   ) { }
 
 
@@ -46,5 +50,12 @@ export class ExpensesListComponent implements OnInit, OnDestroy {
   }
   public deleteExpense(id): void {
     this.expenseService.delExpense(id);
+  }
+
+  public  openModal(template) {
+    this.modalRef = this.modalService.show(template, {
+      class: 'modal-dialog-centered app-modal',
+      ignoreBackdropClick: true
+    });
   }
 }

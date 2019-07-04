@@ -6,6 +6,9 @@
         </app-expense-item>
       </div>
       <div class="expense-btn-group">
+        <button type="button" class="btn btn-primary" (click)="openModal(expenseModal)">
+          Create
+        </button>
         <button class="btn btn-danger btn-sm" (click)="deleteExpense(expense.id)">
           <i class="material-icons">
             delete
@@ -17,3 +20,17 @@
     </header>
   </li>
 </ul>
+
+<ng-template #expenseModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+
+<footer>
+  <button type="button" class="btn btn-outline-secondary" (click)="cancle()">Cancle</button>
+  <button type="button" class="btn btn-success" (click)="save()">Save</button>
+</footer>
+</ng-template>
