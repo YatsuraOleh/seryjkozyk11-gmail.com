@@ -14,17 +14,12 @@ export class ExpensesListComponent implements OnInit, OnDestroy {
   private ngUnsubscribe$ = new Subject();
   expenses: Array<Expense>;
 
-  private modalRef: BsModalRef;
-
   constructor(
-    private expenseService: ExpenseService,
-    private modalService: BsModalService
+    private expenseService: ExpenseService
   ) { }
-
 
   ngOnInit() {
     this.getExpense();
-
     this.expenseService.subject
       .pipe(takeUntil(this.ngUnsubscribe$))
       .subscribe(
@@ -50,12 +45,5 @@ export class ExpensesListComponent implements OnInit, OnDestroy {
   }
   public deleteExpense(id): void {
     this.expenseService.delExpense(id);
-  }
-
-  public  openModal(template) {
-    this.modalRef = this.modalService.show(template, {
-      class: 'modal-dialog-centered app-modal',
-      ignoreBackdropClick: true
-    });
   }
 }

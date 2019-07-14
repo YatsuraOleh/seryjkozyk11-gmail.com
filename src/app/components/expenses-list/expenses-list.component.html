@@ -6,34 +6,12 @@
         </app-expense-item>
       </div>
       <div class="expense-btn-group">
-        <button type="button" class="btn btn-primary" (click)="openModal(expenseModal)">
-          Edit
-        </button>
         <button class="btn btn-danger btn-sm" (click)="deleteExpense(expense.id)">
           <i class="material-icons">
             delete
           </i>
         </button>
-
-
       </div>
     </header>
   </li>
 </ul>
-
-<ng-template #expenseModal>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">Expense: </h4>
-  </div>
-  <div class="modal-body">
-    Corect
-  </div>
-  <footer>
-    <input type="text" name="newExpense">
-  </footer>
-
-<footer>
-  <button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>
-  <button type="button" class="btn btn-success" (click)="save()">Save</button>
-</footer>
-</ng-template>
