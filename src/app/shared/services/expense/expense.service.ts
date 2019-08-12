@@ -26,6 +26,14 @@ export class ExpenseService {
     );
   }
 
+  editExpense(expense): void {
+    this.http.put(`${this.url}/${expense.id}`, expense).subscribe(
+      () => {
+        this.subject.next();
+      }
+    );
+  }
+
   delExpense(id) {
     this.http.delete(`${this.url}/${id}`).subscribe(
       () => {

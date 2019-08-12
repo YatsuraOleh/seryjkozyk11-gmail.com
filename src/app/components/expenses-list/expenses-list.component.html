@@ -2,7 +2,7 @@
   <li class="list-group-item list-group-item-primary expense-item" *ngFor="let expense of expenses">
     <header class="expense-header">
       <div class="d-flex">
-        <app-expense-item [item]="expense">
+        <app-expense-item [item]="expense" (submit)="onSubmit($event)">
         </app-expense-item>
       </div>
       <div class="expense-btn-group">

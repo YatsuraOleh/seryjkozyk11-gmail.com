@@ -1,7 +1,9 @@
 <span>{{ item.expense }}</span>
 
 <div class="expense-btn-group">
-    <button type="button" class="btn btn-primary" (click)="openModal(expenseModal)">
+    <button type="button"
+            class="btn btn-primary"
+            (click)="openModal(expenseModal)">
         Edit
     </button>
 </div>
@@ -10,12 +12,15 @@
     <div class="modal-header">
         <h4 class="modal-title pull-left">Expense: {{ item.expense }}</h4>
     </div>
+
     <div class="modal-body">
-        Corect expense
+        Edit expense
+        <form [formGroup]="editExpenseForm">
+            <input type="text"
+                   [class.is-valid]="isSubmit && editExpenseForm.invalid"
+                   formControlName="expense">
+        </form>
     </div>
-    <footer>
-        <input type="text" name="newExpense">
-    </footer>
 
     <footer>
         <button type="button" class="btn btn-outline-secondary" (click)="cancel()">Cancel</button>

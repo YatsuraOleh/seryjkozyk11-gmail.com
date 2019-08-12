@@ -11,8 +11,10 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap';
   styleUrls: ['./expenses-list.component.css']
 })
 export class ExpensesListComponent implements OnInit, OnDestroy {
-  private ngUnsubscribe$ = new Subject();
+
   expenses: Array<Expense>;
+
+  private ngUnsubscribe$ = new Subject();
 
   constructor(
     private expenseService: ExpenseService
@@ -34,6 +36,11 @@ export class ExpensesListComponent implements OnInit, OnDestroy {
     this.ngUnsubscribe$.complete();
   }
 
+  onSubmit(event: any): void {
+    // console.log(event);
+    this.expenseService.editExpense(event);
+  }
+
   private getExpense() {
     this.expenseService.getExpense()
       .pipe(takeUntil(this.ngUnsubscribe$))
@@ -43,6 +50,7 @@ export class ExpensesListComponent implements OnInit, OnDestroy {
         }
       );
   }
+
   public deleteExpense(id): void {
     this.expenseService.delExpense(id);
   }
